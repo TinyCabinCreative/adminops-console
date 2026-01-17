@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AdminOps Console</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 2rem;
+      color: #222;
+    }
+    nav a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #0366d6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    .status-HEALTHY { color: green; }
+    .status-DEGRADED { color: orange; }
+    .status-OFFLINE { color: red; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">Dashboard</a>
+  <a href="/systems">Systems</a>
+  <a href="/incidents">Incidents</a>
+  <a href="/changes">Changes</a>
+  <a href="/audit">Audit</a>
+</nav>
+
+<hr>
+
+{% block content %}{% endblock %}
+</body>
+</html>

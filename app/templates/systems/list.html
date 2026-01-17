@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Systems</h2>
+
+<a href="/systems/new">Add system</a>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Env</th>
+    <th>Status</th>
+    <th>Owner</th>
+  </tr>
+  {% for s in systems %}
+  <tr>
+    <td>{{ s.name }}</td>
+    <td>{{ s.environment }}</td>
+    <td class="status-{{ s.status }}">{{ s.status }}</td>
+    <td>{{ s.owner_team }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

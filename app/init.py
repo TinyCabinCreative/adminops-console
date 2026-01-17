@@ -1,6 +1,6 @@
 from flask import Flask
 from .extensions import db, login_manager
-from .routes import auth, dashboard, users, systems, incidents
+from .routes import auth, dashboard, users, systems, incidents, changes, audit
 
 def create_app():
     app = Flask(__name__)
@@ -14,5 +14,10 @@ def create_app():
     app.register_blueprint(users.bp)
     app.register_blueprint(systems.bp)
     app.register_blueprint(incidents.bp)
+    app.register_blueprint(dashboard.bp)
+    app.register_blueprint(systems.bp)
+    app.register_blueprint(incidents.bp)
+    app.register_blueprint(changes.bp)
+    app.register_blueprint(audit.bp)
 
     return app

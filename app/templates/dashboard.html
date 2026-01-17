@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<ul>
+    <li>Total systems: {{ stats.systems_total }}</li>
+    <li>Open incidents: {{ stats.incidents_open }}</li>
+    <li>Pending changes: {{ stats.changes_pending }}</li>
+</ul>
+{% endblock %}

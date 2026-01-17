@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Incidents</h2>
+
+<a href="/incidents/new">New incident</a>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Severity</th>
+    <th>Status</th>
+    <th>System</th>
+  </tr>
+  {% for i in incidents %}
+  <tr>
+    <td><a href="/incidents/{{ i.id }}">{{ i.title }}</a></td>
+    <td>{{ i.severity }}</td>
+    <td>{{ i.status }}</td>
+    <td>{{ i.system.name if i.system }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
