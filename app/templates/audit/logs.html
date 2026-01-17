@@ -1,0 +1,24 @@
+<h2>Audit Logs</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>User</th>
+      <th>Action</th>
+      <th>Resource</th>
+      <th>IP</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for log in logs %}
+    <tr>
+      <td>{{ log.timestamp }}</td>
+      <td>{{ log.user_id }}</td>
+      <td>{{ log.action }}</td>
+      <td>{{ log.resource_type }} {{ log.resource_id }}</td>
+      <td>{{ log.ip_address }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
