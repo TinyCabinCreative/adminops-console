@@ -1,8 +1,10 @@
 from flask_login import current_user
 from flask import abort
+from functools import wraps
 
 def require_permission(permission_name):
     def decorator(func):
+        @wraps(func)
         def wrapper(*args, **kwargs):
             if not current_user.is_authenticated:
                 abort(401)
