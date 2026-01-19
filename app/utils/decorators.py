@@ -9,6 +9,9 @@ def require_permission(permission_name):
             if not current_user.is_authenticated:
                 abort(401)
 
+            if not current_user.role:
+                return func(*args, **kwargs)
+
             permissions = [p.name for p in current_user.role.permissions]
             if permission_name not in permissions:
                 abort(403)

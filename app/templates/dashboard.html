@@ -1,9 +1,22 @@
-{% extends "base.html" %}
-{% block content %}
-<h2>Dashboard</h2>
-<ul>
-    <li>Total systems: {{ stats.systems_total }}</li>
-    <li>Open incidents: {{ stats.incidents_open }}</li>
-    <li>Pending changes: {{ stats.changes_pending }}</li>
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <h1>AdminOps Dashboard</h1>
+    <p>You are logged in.</p>
+
+    <ul>
+        <li>Incidents</li>
+        <li>Systems</li>
+        <li>Changes</li>
+        <li>Audit Logs</li>
+    </ul>
+
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+</body>
+
+</html>
