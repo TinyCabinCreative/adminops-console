@@ -8,10 +8,10 @@
 <body>
   <nav>
     <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a> |
-    <a href="{{ url_for('incidents.index') }}">Incidents</a> |
-    <a href="{{ url_for('systems.index') }}">Systems</a> |
-    <a href="{{ url_for('changes.index') }}">Changes</a> |
-    <a href="{{ url_for('audit.index') }}">Audit Logs</a>
+    <a href="{{ url_for('incidents.list_incidents') }}">Incidents</a> |
+    <a href="{{ url_for('systems.list_systems') }}">Systems</a> |
+    <a href="{{ url_for('changes.list_changes') }}">Changes</a> |
+    <a href="{{ url_for('audit.view_audit_logs') }}">Audit Logs</a>
   </nav>
   <hr>
   {% block content %}{% endblock %}

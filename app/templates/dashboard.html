@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>Dashboard</title>
-</head>
+{% block content %}
+<h1>AdminOps Dashboard</h1>
+<p>You are logged in.</p>
 
-<body>
-    <h1>AdminOps Dashboard</h1>
-    <p>You are logged in.</p>
+<ul>
+    <li><a href="{{ url_for('incidents.list_incidents') }}">Incidents</a></li>
+    <li><a href="{{ url_for('systems.list_systems') }}">Systems</a></li>
+    <li><a href="{{ url_for('changes.list_changes') }}">Changes</a></li>
+    <li><a href="{{ url_for('audit.view_audit_logs') }}">Audit Logs</a></li>
+</ul>
 
-    <ul>
-        <li>Incidents</li>
-        <li>Systems</li>
-        <li>Changes</li>
-        <li>Audit Logs</li>
-    </ul>
-
-    <a href="{{ url_for('auth.logout') }}">Logout</a>
-</body>
-
-</html>
+<a href="{{ url_for('auth.logout') }}">Logout</a>
+{% endblock %}
