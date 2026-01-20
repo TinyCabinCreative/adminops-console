@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Incidents</h2>
+
+<ul>
+    {% for incident in incidents %}
+    <li>
+        {{ incident.title }} — {{ incident.severity }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
