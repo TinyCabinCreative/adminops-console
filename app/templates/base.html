@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>AdminOps Console</title>
+    <meta charset="UTF-8">
+    <title>AdminOps Console</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-
 <body>
-  <nav>
-    <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a> |
-    <a href="{{ url_for('incidents.list_incidents') }}">Incidents</a> |
-    <a href="{{ url_for('systems.list_systems') }}">Systems</a> |
-    <a href="{{ url_for('changes.list_changes') }}">Changes</a> |
-    <a href="{{ url_for('audit.view_audit_logs') }}">Audit Logs</a>
-  </nav>
-  <hr>
-  {% block content %}{% endblock %}
-</body>
 
+<nav>
+    <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('incidents.list_incidents') }}">Incidents</a>
+    <a href="{{ url_for('systems.list_systems') }}">Systems</a>
+    <a href="{{ url_for('changes.list_changes') }}">Changes</a>
+    <a href="{{ url_for('audit.view_audit_logs') }}">Audit</a>
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    AdminOps Console • Secure Operations Platform
+</footer>
+
+</body>
 </html>

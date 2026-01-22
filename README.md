@@ -1,5 +1,5 @@
 # AdminOps Console (MVP)
-
+To run the app type ' flask --app app:create_app run ' in terminals
 ## Overview
 AdminOps Console is a lightweight internal administration tool designed to
 track systems, incidents, changes, and audit activity with role-based access control.
